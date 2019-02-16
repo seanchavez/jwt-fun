@@ -16,7 +16,15 @@ app.get('/create', (req, res) => {
 });
 
 app.get('/verify/:token', (req, res) => {
-  res.send(`TODO: verify this JWT: ${req.params.token}`);
+  const { token } = req.params;
+  jwt.verify(token, 'top-secret-phrase', (err, verifiedJwt) => {
+    if (err) {
+      res.send(err.message);
+    } else {
+      res.send(verifiedJwt);
+    }
+  });
+  //res.send(`TODO: verify this JWT: ${req.params.token}`);
 });
 
 app.get('/', (req, res) => res.send('TODO: use Okta for auth'));

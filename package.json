@@ -10,7 +10,8 @@
   "author": "Sean Chavez",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "njwt": "^0.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"

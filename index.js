@@ -1,3 +1,4 @@
+const jwt = require('njwt');
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -8,7 +9,10 @@ app.get('/create', (req, res) => {
     res.status(401).send('Try user: AzureDiamond, password: hunter2');
     return;
   }
-  res.send('TODO: create a JWT');
+  const claims = { iss: 'jwt-fun', sub: 'AzureDiamond' };
+  const token = jwt.create(claims, 'top-secret-phrase');
+  token.setExpiration(new Date().getTime() + 60 * 1000);
+  res.send(token.compact());
 });
 
 app.get('/verify/:token', (req, res) => {

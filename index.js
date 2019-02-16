@@ -1,3 +1,4 @@
+require('dotenv').config();
 const jwt = require('njwt');
 const express = require('express');
 const app = express();

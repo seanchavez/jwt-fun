@@ -10,7 +10,10 @@
   "author": "Sean Chavez",
   "license": "ISC",
   "dependencies": {
+    "@okta/oidc-middleware": "^1.0.2",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "njwt": "^0.4.0"
   },
   "devDependencies": {
